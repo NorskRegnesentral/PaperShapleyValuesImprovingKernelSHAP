@@ -2,6 +2,7 @@
 Relevant code to the "Improving the Weighting Strategy in KernelSHAP" paper by Lars Henry Berge Olsen and Martin Jullum.
 
 There is a three step procedure to replicate Figure 2 in the paper.
+0. (Optional) Run the file `Run_model.R` to create the model and compute the true Shapley values. This is very time consuming and the output is saved in the `rds` folder.
 1. Run the file `Run_sampling.R` with the desired number of repetitions `B` to generate files that generates and store the sampled coalitions using the different sampling strategies.
 2. Run the file `Run_SV.R` to compute the MAE error between the estimated and true Shapley values for different number of used unique coalitions, and store the results as data tables to disk.
 3. Run the file `Run_plot.R` to load the data tables with the MAE and make the plot.
