@@ -66,7 +66,7 @@ fig_MAE <-
   ) +
   labs(
     color = "Strategy:", fill = "Strategy:", linetype = "Strategy:",
-    x = expression(N[S]),
+    x = expression(N[coal]),
     y = bquote(bar(MAE)[500] * "(" * bold(phi) * ", " * bold(phi)[italic(D)] * ")")
   ) +
   theme_minimal() +
@@ -97,7 +97,7 @@ fig_MAE2 <- ggplot(
   ) +
   labs(
     color = "Strategy:", fill = "Strategy:", linetype = "Strategy:",
-    x = expression(N[S]),
+    x = expression(N[coal]),
     y = bquote(bar(MAE)[500] * "(" * bold(phi) * ", " * bold(phi)[italic(D)] * ")")
   ) +
   theme_minimal() +
