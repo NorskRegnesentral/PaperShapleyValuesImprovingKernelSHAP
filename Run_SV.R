@@ -42,11 +42,16 @@ for (rho_idx in seq_along(rhos)) {
   true_explanations = readRDS(save_file_name_true)
   dt_vS = true_explanations$internal$output$dt_vS
   shap_names <- true_explanations$internal$parameters$feature_names
-  dt_true_mat = as.matrix(true_explanations$shapley_values[,-1])
+  # To support that the true Shapley values are estimated using either the old or new version of shapr
+  if (is.null(true_explanations$shapley_values)) {
+    dt_true_mat = as.matrix(true_explanations$shapley_values_est[,-1])
+  } else {
+    dt_true_mat = as.matrix(true_explanations$shapley_values[,-1])
+  }
   message("Done loading true Shapley values")
 
   # Iterate over the repetitions
-  for (repetition_idx in repetitions) {
+  for (repetition_idx in seq_len(repetitions)) {
 
     # Get the current repetition
     repetition = repetitions[repetition_idx]
