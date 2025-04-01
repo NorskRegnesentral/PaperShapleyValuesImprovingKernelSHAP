@@ -20,7 +20,7 @@ all_coalitions = unlist(lapply(0:m, utils::combn, x = m, simplify = FALSE), recu
 dt_all_coalitions = data.table(features = sapply(all_coalitions, function(x) paste(x, collapse = ",")))[, id := .I]
 
 # The number of repetitions. Change to seq(500) for 500 repetitions
-repetitions = seq(10)
+repetitions = seq(100)
 
 # Loop over the rhos and the repetitions
 for (rho_idx in seq_along(rhos)) {

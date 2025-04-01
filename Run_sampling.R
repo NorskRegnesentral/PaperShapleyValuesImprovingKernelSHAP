@@ -18,7 +18,7 @@ n_sample_scale = 20
 folder_save = "./rds"
 
 # The number of repetitions
-repetitions = seq(10)
+repetitions = seq(100)
 
 # The different sampling versions
 versions = c("Unique", "Paired", "PySHAP", "PySHAP*")
